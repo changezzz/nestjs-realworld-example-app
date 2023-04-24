@@ -8,7 +8,7 @@ import { User } from './user.decorator';
 import { ValidationPipe } from '../shared/pipes/validation.pipe';
 
 import {
-  ApiBearerAuth, ApiTags
+  ApiBearerAuth, ApiBody, ApiTags
 } from '@nestjs/swagger';
 
 @ApiBearerAuth()
@@ -39,6 +39,7 @@ export class UserController {
     return await this.userService.delete(params.slug);
   }
 
+  @ApiBody({type: LoginUserDto})
   @UsePipes(new ValidationPipe())
   @Post('users/login')
   async login(@Body('user') loginUserDto: LoginUserDto): Promise<UserRO> {

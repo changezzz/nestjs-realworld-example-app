@@ -28,6 +28,9 @@ export class UserService {
       return null;
     }
 
+    // const hash = await argon2.hash(user.password)
+    // console.log(hash);
+
     if (await argon2.verify(user.password, password)) {
       return user;
     }
