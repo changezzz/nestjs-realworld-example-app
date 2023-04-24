@@ -1,0 +1,10 @@
+{
+  "type": "mysql",
+  "host": "localhost",
+  "port": 3306,
+  "username": "root",
+  "password": "Mysql_2018",
+  "database": "nestjsrealworld-prisma",
+  "entities": ["src/**/**.entity{.ts,.js}"],
+  "synchronize": true
+}
